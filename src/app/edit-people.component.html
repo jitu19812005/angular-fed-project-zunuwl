@@ -1,9 +1,9 @@
-<h3>Add Employee</h3>
+<h3>People Edit teransaction</h3>
 <div class="container">
-  <form #addEmp="ngForm" (ngSubmit)="onSubmit(addEmp.value)">
+  <form #editEmp="ngForm" (ngSubmit)="onUpdate(editEmp.value)">
     <div class="form-group">
-      <label for="name">Employee Name:</label>
-      <input type="text" required #refName="ngModel" minlength="3" maxlength="30" name="name" pattern="[a-zA-Z ]*$" id="name" class="form-control" [(ngModel)]="name"/>
+      <label for="name">people Name:</label>
+      <input type="text" required  #refName="ngModel" minlength="3" maxlength="30" name="name" id="name" pattern="[a-zA-Z ]*$" class="form-control" [(ngModel)]="name"/>
       <div *ngIf="refName.errors && (refName.dirty||refName.touched)" class="alert alert-danger">
         <div [hidden]="!refName.errors.required">
           Please enter a name
@@ -20,23 +20,18 @@
 
     <div class="form-group">
       <label for="location">Location</label>
-      <select #refloc="ngModel" [(ngModel)]="location" name="location" class="form-control" id="location" required>
+      <select class="form-control" name="location" [(ngModel)]="location" id="location" value="location">
         <option>Banglore</option>
         <option>Chennai</option>
         <option>Pune</option>
         <option>Hyderabad</option>
       </select>
-      <div *ngIf="refName.errors && (refName.dirty||refName.touched)" class="alert alert-danger">
-        <div [hidden]="!refName.errors.required">
-          Please enter a name
-        </div>
-      </div>
     </div>
 
 
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" required email maxlength="30" #refMail="ngModel" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" [(ngModel)]="email"/>
+      <input type="email" required email maxlength="30" #refMail="ngModel" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" value="email"class="form-control" [(ngModel)]="email"/>
       <div *ngIf="refMail.errors && (refMail.dirty||refMail.touched)" class="alert alert-danger">
         <div [hidden]="!refMail.errors.required">
           Please enter email
@@ -53,7 +48,7 @@
 
     <div class="form-group">
       <label for="mobile">Mobile:</label>
-      <input type="text" required pattern="^[1-9]\d{9}$" #refMob="ngModel" id="mobile" name="mobile" class="form-control" [(ngModel)]="mobile"/>
+      <input type="text" required pattern="^[1-9]\d{9}$" #refMob="ngModel" id="mobile" value="mobile" name="mobile" class="form-control" [(ngModel)]="mobile"/>
     </div>
     <div *ngIf="refMob.errors && (refMob.dirty || refMob.touched)" class="alert alert-danger">
       <div [hidden]="!refMob.errors.required">
@@ -64,6 +59,6 @@
       </div>
     </div>
    
-    <button [disabled]="!addEmp.form.valid" type="submit" id="add" class="btn btn-primary">Submit</button>
+    <button [disabled]="!editEmp.form.valid" type="submit" id="update" class="btn btn-primary">Update</button>
   </form>
 </div>

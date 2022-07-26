@@ -1,5 +1,5 @@
 
-export class Employee{
+export class People{
   id:number;
   name: string;
   location:string;

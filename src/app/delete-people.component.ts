@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from './people.service';
-import { ActivatedRoute } from '@angular/router';
 import { People } from './People';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 @Component({
-  templateUrl: 'details.component.html',
+  selector: 'delete-people',
+  template: 'deleting...',
 })
-export class PeopleDetailsComponent implements OnInit {
+export class DeletePeopleComponent implements OnInit {
   id: number;
+  people: People;
   constructor(
-    private router: Router,
     private employeeService: PeopleService,
+    private router: Router,
     private route: ActivatedRoute
   ) {}
-  people: People;
   ngOnInit() {
     this.route.params.subscribe((paramsId) => {
       this.id = paramsId.id;
     });
-    this.getEmployee();
+    this.deletePeople(this.id);
   }
-  getEmployee(): void {
-    this.employeeService.getEmployee(this.id).subscribe((People) => {
-      this.people = People;
+  deletePeople(id): void {
+    this.employeeService.deletePeople(this.id).subscribe((employee) => {
+      this.router.navigate(['/employees']);
     });
-  }
-  go_back() {
-    this.router.navigate(['/employees']);
   }
 }
