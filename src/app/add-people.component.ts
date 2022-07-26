@@ -3,14 +3,14 @@ import { PeopleService } from './people.service';
 import { People } from './People';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'add-employee',
-  templateUrl: 'add-employee.component.html',
+  selector: 'add-people',
+  templateUrl: 'add-people.component.html',
   styles: [
     `input.ng-invalid{border-left:5px solid red;}
   input.ng-valid{border-left:5px solid green;}`,
   ],
 })
-export class AddEmployeeComponent {
+export class AddPeopleComponent {
   employees: People[] = [];
   constructor(private employeeService: PeopleService, private router: Router) {}
   onSubmit(employee): void {

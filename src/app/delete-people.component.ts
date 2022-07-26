@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'delete-employee',
   template: 'deleting...',
 })
-export class DeleteEmployeeComponent implements OnInit {
+export class DeletePeopleComponent implements OnInit {
   id: number;
   people: People;
   constructor(

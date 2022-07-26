@@ -4,14 +4,14 @@ import { ActivatedRoute } from '@angular/router';
 import { People } from './People';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'edit-employee',
-  templateUrl: 'edit-employee.component.html',
+  selector: 'edit-people',
+  templateUrl: 'edit-people.component.html',
   styles: [
     `input.ng-invalid{border-left:5px solid red;}
   input.ng-valid{border-left:5px solid green;}`,
   ],
 })
-export class EditEmployeeComponent {
+export class EditPeopleComponent {
   id: number;
   name: string;
   location: string;

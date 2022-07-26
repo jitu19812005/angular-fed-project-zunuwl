@@ -10,7 +10,9 @@
 />
 <br />
 <label id="count"
-  >Total Number of Employees:{{ (employees | searchByName: searchText).length }}
+  >Total Number of People in Demand:{{
+    (employees | searchByName: searchText).length
+  }}
   <br />
 </label>
 <table border="">

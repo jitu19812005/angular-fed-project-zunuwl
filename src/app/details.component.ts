@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   templateUrl: 'details.component.html',
 })
-export class EmployeeDetailsComponent implements OnInit {
+export class PeopleDetailsComponent implements OnInit {
   id: number;
   constructor(
     private router: Router,
