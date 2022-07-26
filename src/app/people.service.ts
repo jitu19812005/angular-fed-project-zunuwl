@@ -29,7 +29,7 @@ export class PeopleService {
   updateEmployee(employee: People): Observable<any> {
     return this.http.put(this.employeesUrl, employee, this.httpOptions);
   }
-  deleteEmployee(employee: People | number): Observable<People> {
+  deletePeople(employee: People | number): Observable<People> {
     const id = employee;
     const url = `${this.employeesUrl}/${id}`;
     return this.http.delete<People>(url, this.httpOptions);

@@ -4,7 +4,7 @@ import { People } from './People';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'delete-employee',
+  selector: 'delete-people',
   template: 'deleting...',
 })
 export class DeletePeopleComponent implements OnInit {
@@ -19,10 +19,10 @@ export class DeletePeopleComponent implements OnInit {
     this.route.params.subscribe((paramsId) => {
       this.id = paramsId.id;
     });
-    this.deleteEmployee(this.id);
+    this.deletePeople(this.id);
   }
-  deleteEmployee(id): void {
-    this.employeeService.deleteEmployee(this.id).subscribe((employee) => {
+  deletePeople(id): void {
+    this.employeeService.deletePeople(this.id).subscribe((employee) => {
       this.router.navigate(['/employees']);
     });
   }

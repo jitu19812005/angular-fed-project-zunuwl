@@ -19,10 +19,10 @@ import { SearchByNamePipe } from './search-by-name.pipe';
 const appRoutes: Routes = [
   { path: '', component: PeopleHomeComponent },
   { path: 'employees', component: PeopleListComponent },
-  { path: 'addEmployee', component: AddPeopleComponent },
+  { path: 'addPeople', component: AddPeopleComponent },
   { path: 'details/:id', component: PeopleDetailsComponent },
-  { path: 'editEmployee/:id', component: EditPeopleComponent },
-  { path: 'deleteEmployee/:id', component: DeletePeopleComponent },
+  { path: 'editPeople/:id', component: EditPeopleComponent },
+  { path: 'deletePeople/:id', component: DeletePeopleComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 @NgModule({

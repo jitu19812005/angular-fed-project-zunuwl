@@ -41,16 +41,12 @@
       <td [attr.id]="'email' + (i + 1)">{{ employee.email }}</td>
       <td [attr.id]="'mob' + (i + 1)">{{ employee.mobile }}</td>
       <td>
-        <a
-          [routerLink]="['/editEmployee', employee.id]"
-          class="btn btn-secondary"
+        <a [routerLink]="['/editPeople', employee.id]" class="btn btn-secondary"
           >Edit{{ i + 1 }}</a
         >
       </td>
       <td>
-        <a
-          [routerLink]="['/deleteEmployee', employee.id]"
-          class="btn btn-danger"
+        <a [routerLink]="['/deletePeople', employee.id]" class="btn btn-danger"
           >Delete{{ i + 1 }}</a
         >
       </td>
