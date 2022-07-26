@@ -1,27 +1,31 @@
-import {Component,OnInit} from '@angular/core';
-import {EmployeeService} from './employee.service';
+import { Component, OnInit } from '@angular/core';
+import { PeopleService } from './people.service';
 import { ActivatedRoute } from '@angular/router';
-import {Employee} from './employee';
-import {Router} from '@angular/router';
+import { People } from './People';
+import { Router } from '@angular/router';
 @Component({
-  templateUrl:'details.component.html'
-  })
-export class EmployeeDetailsComponent implements OnInit{
-  id:number;
-  constructor(private router:Router,private employeeService:EmployeeService,private route: ActivatedRoute){}
-  employee:Employee;
-  ngOnInit(){
-    this.route.params.subscribe(paramsId => {
-        this.id = paramsId.id;
+  templateUrl: 'details.component.html',
+})
+export class EmployeeDetailsComponent implements OnInit {
+  id: number;
+  constructor(
+    private router: Router,
+    private employeeService: PeopleService,
+    private route: ActivatedRoute
+  ) {}
+  people: People;
+  ngOnInit() {
+    this.route.params.subscribe((paramsId) => {
+      this.id = paramsId.id;
     });
     this.getEmployee();
   }
-  getEmployee():void{
-    this.employeeService.getEmployee(this.id).subscribe(employee=>{
-      this.employee=employee;
+  getEmployee(): void {
+    this.employeeService.getEmployee(this.id).subscribe((People) => {
+      this.people = People;
     });
   }
-  go_back(){
-    this.router.navigate(["/employees"]);
+  go_back() {
+    this.router.navigate(['/employees']);
   }
 }
