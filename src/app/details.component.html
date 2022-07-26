@@ -1,0 +1,8 @@
+<h2>Employee Details</h2>
+<label id="id">Id:{{id}}</label>
+<br/>
+<label id="id">Name:<span>{{employee.name}}</span></label><br/>
+<label id="location">Location:{{employee.location}}</label><br/>
+<label id="email">Email:{{employee.email}}</label><br/>
+<label id="mobile">Mobile:{{employee.mobile}}</label><br/>
+<button id="back" class="btn-btn-primary" (click)="go_back()">Back</button>
