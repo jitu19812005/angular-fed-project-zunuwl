@@ -38,7 +38,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     EmployeeHomeComponent,
-    PeopleListComponent,
+    EmployeeListComponent,
     AddEmployeeComponent,
     EditEmployeeComponent,
     DeleteEmployeeComponent,
